@@ -1,3 +1,3 @@
 # beyond-the-basics
 
-Repo for tuorial C++ 17: Beyond the basics from Kate Gregory
+Repo for tutorial C++ 17: Beyond the basics from Kate Gregory
