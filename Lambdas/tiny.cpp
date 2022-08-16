@@ -51,19 +51,19 @@ int main() {
     std::cout << "x = " << x << "\n" << "y = " << y << "\n";
 
     //////////////////////
-    // { // braces for scope
-    //     auto pResource = std::make_unique<Resource>(", "); // a smart pointer that automatically clean itself up
+    { // braces for scope
+        auto pResource = std::make_unique<Resource>(", "); // a smart pointer that automatically clean itself up
 
-    //     for_each(begin(nums), end(nums), 
-    //         [=, &message, p = std::move(pResource)](int n) {
-    //             if (n >= x && n <=y ) {
-    //                 message += p->getName() + std::to_string(n);
-    //             }
-    //         });
+        for_each(begin(nums), end(nums), 
+            [=, &message, p = std::move(pResource)](int n) {
+                if (n >= x && n <=y ) {
+                    message += p->getName() + std::to_string(n);
+                }
+            });
         
-    //     // pResource is not out of scope yet -> but it was moved to the lambda so it is empty now
-    //     std::cout << "\nOut of for_each\n";
-    // }
-    // std::cout << "\nOut of scope from braces\n";
+        // pResource is not out of scope yet -> but it was moved to the lambda so it is empty now
+        std::cout << "\nOut of for_each\n";
+    }
+    std::cout << "\nOut of scope from braces\n";
 
 }
