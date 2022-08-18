@@ -10,6 +10,7 @@ class Person {
     public:
         Person(std::string first, std::string last, int arbitary);
         Person();
+        ~Person(void);
         std::string getName() const { return firstname_ + " " + lastname_; };
         int getNum() const { return arbitaryNumber_; };
 };
